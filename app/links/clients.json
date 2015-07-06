@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "ClientA",
+		"envs" : ["production", "pre-production", "validation", "integration"]
+	},
+	{
+		"name" : "ClientB",
+		"envs" : ["production", "pre-production"]
+	}
+]

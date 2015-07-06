@@ -2,4 +2,4 @@
 
 /* app */
 
-var myLinks = angular.module('myLinks', ['myLinksControllers']);
+var myLinks = angular.module('myLinks', ['myLinksControllers', 'myLinksServices']);

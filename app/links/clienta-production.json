@@ -1,0 +1,38 @@
+[
+	{
+		"category" : "monitor",
+		"links" : [
+			{
+				"title" : "main monitor",
+				"href" : "#",
+				"port" : "80",
+				"description" : "main monitor of the environment"
+			},
+			{
+				"title" : "secondary monitor",
+				"href" : "#",
+				"port" : "81",
+				"description" : "secondary monitor of the environment"
+			}
+		]
+
+	},
+	{
+		"category" : "application engine",
+		"links" : [
+			{
+				"title" : "eng1",
+				"href" : "#",
+				"port" : "5560",
+				"description" : "first engine"
+			},
+			{
+				"title" : "eng2",
+				"href" : "#",
+				"port" : "5570",
+				"description" : "second engine"
+			}
+		]
+
+	}
+]
