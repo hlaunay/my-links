@@ -10,3 +10,12 @@ myLinksServices.factory('Client', ['$resource',
 			query : {method:'GET', isArray:true}
 		});
 }]);
+
+myLinksServices.factory('Environment', ['$resource', function($resource) {
+	return $resource('links/:envId.json', {}, {
+		query : {
+			methods: 'GET', 
+			params: {envId: 'env'}, 
+			isArray: true}
+	});
+}]);
