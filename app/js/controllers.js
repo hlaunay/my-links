@@ -15,9 +15,11 @@ myLinksControllers.controller('MyLinksCtrl', ['$scope', '$filter', 'Client', 'En
 		$scope.envName = name;
 
 		$scope.data = Environment.query({envId: angular.lowercase(client).concat("-").concat(angular.lowercase(name))});
+		$("#input_search").focus();
 	};
 
 	$scope.clients = Client.query(function(){
 		$scope.setEnvironment($scope.clients[0].name, $scope.clients[0].envs[0]);
 	});
+	$("#input_search").focus();
 }]);
