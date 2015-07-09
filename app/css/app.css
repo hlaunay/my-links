@@ -5,3 +5,10 @@ body {
 #envName{
 	font-size: 55%;
 }
+
+.footer{
+	color: grey;
+	padding-top: 15px;
+	border-top: 2px solid #ddd;
+	text-align: right;
+}
