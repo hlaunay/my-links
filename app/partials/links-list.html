@@ -17,11 +17,11 @@
 	</div>
 </nav>
 
-<div class="container-fluid">
+<div class="container">
 
 	<div class="row">
 		<div class="col-md-3"><!-- summary -->
-			<h1>My environments</h1>
+			<h1>My env&#39;s</h1>
 
 			<div class="panel panel-default" ng-repeat="client in clients">
 				<div class="panel-heading">
@@ -38,7 +38,7 @@
 		</div>
 		<div class="col-md-9"><!-- main content -->
 
-			<h1 id="clientTitle">{{clientName}} <small id="envName">{{envName}}</small></h1>
+			<h1 id="clientTitle">{{clientName}} <span class="label label-warning" id="envName">{{envName}}</span></h1>
 
 			<div class="category" ng-repeat="cat in data  | filter:query">
 				<h2>{{cat.category}}</h2>
