@@ -1,10 +1,57 @@
 [
 	{
 		"name" : "ClientA",
-		"envs" : ["production", "pre-production", "validation", "integration"]
+		"envs" : [
+			{
+				"name": "production",
+				"cssSuffix" : "level1" 
+			}, 
+			{
+				"name": "pre-production",
+				"cssSuffix": "level2"
+			}, 
+			{
+				"name": "validation",
+				"cssSuffix": "level3"
+			}, 
+			{
+				"name": "integration",
+				"cssSuffix": "level4"
+			}, 
+			{
+				"name": "level5",
+				"cssSuffix": "level5"
+			}, 
+			{
+				"name": "level6",
+				"cssSuffix": "level6"
+			}, 
+			{
+				"name": "level7",
+				"cssSuffix": "level7"
+			}, 
+			{
+				"name": "level8",
+				"cssSuffix": "level8"
+			}, 
+			{
+				"name": "level9",
+				"cssSuffix": "level9"
+			}, 
+			{
+				"name": "level10",
+				"cssSuffix": "level10"
+			}]
 	},
 	{
 		"name" : "ClientB",
-		"envs" : ["production", "pre-production"]
+		"envs" : [{
+				"name": "production",
+				"cssSuffix" : "level1" 
+			}, 
+			{
+				"name": "pre-production",
+				"cssSuffix": "level2"
+			}]
 	}
 ]

@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 #envName{
@@ -11,4 +11,159 @@ body {
 	padding-top: 15px;
 	border-top: 2px solid #ddd;
 	text-align: right;
+}
+
+.puce{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+    position: relative;
+    top: 1px;
+}
+
+.attributes{
+	border-top: 1px solid grey;
+	margin-top: 6px;
+	padding-top: 6px;
+	padding-left: 18px;
+}
+
+.navbar-level1{
+	background-color: #DD011D;
+	border-bottom-color: #931120;
+}
+.navbar-brand-level1{
+	color: #540C14;
+}
+.navbar-brand-level1:hover{
+	color: #FFFFFF;
+}
+.navbar-text-level1{
+	color: #540C14;
+}
+
+.navbar-level2{
+	background-color: #EA5D0D;
+	border-bottom-color: #C14B0B;
+}
+.navbar-brand-level2{
+	color: #562105;
+}
+.navbar-brand-level2:hover{
+	color: #FFFFFF;
+}
+.navbar-text-level2{
+	color: #562105;
+}
+
+.navbar-level3{
+	background-color: #FDEC00;
+	border-bottom-color: #C1B100;
+}
+.navbar-brand-level3{
+	color: #3F3A00;
+}
+.navbar-brand-level3:hover{
+	color: #FFFFFF;
+}
+.navbar-text-level3{
+	color: #3F3A00;
+}
+
+.navbar-level4{
+	background-color: #B8CD02;
+	border-bottom-color: #808E00;
+}
+.navbar-brand-level4{
+	color: #474F00;
+}
+.navbar-brand-level4:hover{
+	color: #FFFFFF;
+}
+.navbar-text-level4{
+	color: #474F00;
+}
+
+.navbar-level5{
+	background-color: #13A22E;
+	border-bottom-color: #0E7721;
+}
+.navbar-brand-level5{
+	color: #063D10;
+}
+.navbar-brand-level5:hover{
+	color: #FFFFFF;
+}
+.navbar-text-level5{
+	color: #063D10;
+}
+
+.navbar-level6{
+	background-color: #00AEE1;
+	border-bottom-color: #0085AA;
+}
+.navbar-brand-level6{
+	color: #FFFFFF;
+}
+.navbar-brand-level6:hover{
+	color: #000000;
+}
+.navbar-text-level6{
+	color: #FFFFFF;
+}
+
+.navbar-level7{
+	background-color: #016CB2;
+	border-bottom-color: #015589;
+}
+.navbar-brand-level7{
+	color: #FFFFFF;
+}
+.navbar-brand-level7:hover{
+	color: #000000;
+}
+.navbar-text-level7{
+	color: #FFFFFF;
+}
+
+.navbar-level8{
+	background-color: #4A338B;
+	border-bottom-color: #352566;
+}
+.navbar-brand-level8{
+	color: #FFFFFF;
+}
+.navbar-brand-level8:hover{
+	color: #000000;
+}
+.navbar-text-level8{
+	color: #FFFFFF;
+}
+
+.navbar-level9{
+	background-color: #7C2B87;
+	border-bottom-color: #5E2068;
+}
+.navbar-brand-level9{
+	color: #FFFFFF;
+}
+.navbar-brand-level9:hover{
+	color: #000000;
+}
+.navbar-text-level9{
+	color: #FFFFFF;
+}
+
+.navbar-level10{
+	background-color: #B30662;
+	border-bottom-color: #840547;
+}
+.navbar-brand-level10{
+	color: #FFFFFF;
+}
+.navbar-brand-level10:hover{
+	color: #000000;
+}
+.navbar-text-level10{
+	color: #FFFFFF;
 }

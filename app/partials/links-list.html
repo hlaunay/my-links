@@ -1,16 +1,24 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar-fixed-top" ng-class="linksCtrl.getNavbarClass('navbar')">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">My-Links</a>
+			<a ng-class="linksCtrl.getNavbarClass('navbar-brand')" href="#">{{linksCtrl.clientName}}</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-			</ul>
+			<p ng-class="linksCtrl.getNavbarClass('navbar-text')">{{linksCtrl.envName}}</p>
 
 			<form class="navbar-form navbar-right" role="search">
 				<div class="form-group">
-					<input id="input_search" type="text" class="form-control" placeholder="Search" ng-model="query"/>
+                    <div class="input-group">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-search"></span>
+						</span>
+					    <input id="input_search" type="text" class="form-control" placeholder="Filter" ng-model="linksCtrl.query"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="linksCtrl.query='';">
+                                <span class="glyphicon glyphicon-remove"/>
+                            </button>
+                        </span>   
+                    </div>
 				</div>
 			</form>
 		</div><!--/.nav-collapse -->
@@ -21,46 +29,53 @@
 
 	<div class="row">
 		<div class="col-md-3"><!-- summary -->
-			<h1>My env&#39;s</h1>
-
-			<div class="panel panel-default" ng-repeat="client in clients">
+		
+			<div class="panel panel-default" ng-repeat="client in linksCtrl.clients">
 				<div class="panel-heading">
 					<h3 class="panel-title client">{{client.name}}</h3>
 				</div>
 				<!-- List group -->
 				<ul class="list-group">
 					<li class="list-group-item environment" ng-repeat="env in client.envs">
-						<span class="glyphicon glyphicon-link" aria-hidden="true"></span> 
-						<a href="#" title="links of {{env}}" ng-click="setEnvironment(client.name, env)">{{env}}</a>
+						<span ng-class="linksCtrl.getPuceClass(env)" aria-hidden="true"></span> 
+						<a href="#" title="links of {{env.name}}" ng-click="linksCtrl.setEnvironment(client.name, env)">{{env.name}}</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-9"><!-- main content -->
 
-			<h1 id="clientTitle">{{clientName}} <span class="label label-warning" id="envName">{{envName}}</span></h1>
-
-			<div class="category" ng-repeat="cat in data  | filter:query">
+			<div class="category" ng-repeat="cat in linksCtrl.data  | filter:query">
 				<h2>{{cat.category}}</h2>
 
 					<table class="table table-striped table-hover" ng-if="cat.links.length != 0">
 						<thead>
 							<tr>
 								<th>Link</th>
+								<th>Hostname</th>
 								<th>Port</th>
 								<th>Description</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="link in cat.links | filter:query">
-								<td class="col-md-4"><a href="{{link.href}}" target="_parent" title="{{link.title}}">{{link.title}}</a></td>
-								<td class="col-md-2">{{link.port}}</td>
-								<td class="col-md-6">{{link.description}}</td>
+							<tr ng-repeat="link in cat.links | filter:linksCtrl.query">
+								<td class="col-md-3"><a href="{{link.href}}" target="_blank" title="{{link.title}}">{{link.title}}</a></td>
+								<td class="col-md-2">{{link.hostname}}</td>
+								<td class="col-md-1">{{link.port}}</td>
+								<td class="col-md-6">
+									<span ng-class="linksCtrl.getAttributesClass(link.isShown)" ng-if="link.attributes.length > 0" ng-click="link.isShown=!link.isShown"></span>
+									{{link.description}}
+									<div class="attributes" ng-if="link.attributes.length > 0" ng-show="link.isShown">
+										<p ng-repeat="attribute in link.attributes">
+											{{attribute.key}}: {{attribute.value}}	
+										</p>
+									</div>
+								</td>
 							</tr>
 						</tbody>
 					</table>
 			</div> <!-- category -->
-			<div class="category" ng-if="data.length == 0">
+			<div class="category" ng-if="linksCtrl.data.length == 0">
 				<strong>No links for this environment.</strong>
 			</div>
 
@@ -74,7 +89,7 @@
 		<p>
 			I am the footer. Thanks to read me. 
 			This application is hosted by <a href="https://github.com/hlaunay/my-links" title="repo">github</a> <i class="fa fa-github"></i> so feel free to contribute.
-			The current version is 3.0.
+			The current version is 4.0.
 		</p>
 	</div>
 </footer>

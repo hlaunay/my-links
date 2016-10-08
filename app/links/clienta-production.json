@@ -5,12 +5,20 @@
 			{
 				"title" : "main monitor",
 				"href" : "#",
+				"hostname" : "obux065-tst",
 				"port" : "80",
-				"description" : "main monitor of the environment"
+				"description" : "main monitor of the environment",
+				"attributes" : [
+					{
+						"key" : "keyname",
+						"value" : "value"
+					}
+				]
 			},
 			{
 				"title" : "secondary monitor",
 				"href" : "#",
+				"hostname" : "localhost",
 				"port" : "81",
 				"description" : "secondary monitor of the environment"
 			}
@@ -23,12 +31,14 @@
 			{
 				"title" : "eng1",
 				"href" : "#",
+				"hostname" : "localhost",
 				"port" : "5560",
 				"description" : "first engine"
 			},
 			{
 				"title" : "eng2",
 				"href" : "#",
+				"hostname" : "localhost",
 				"port" : "5570",
 				"description" : "second engine"
 			}

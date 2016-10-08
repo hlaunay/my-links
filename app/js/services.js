@@ -1,21 +1,34 @@
+(function() {
 'use strict';
 
-/* Services */
+	angular
+		.module('myLinks')
+		.factory('myLinksServices', myLinksServices);
 
-var myLinksServices = angular.module('myLinksServices', ['ngResource']);
+	myLinksServices.$inject = ['$resource'];
+	function myLinksServices($resource) {
+		var service = {
+			getClients: _getClients,
+			getEnvironment: _getEnvironment
+		};
+		
+		return service;
 
-myLinksServices.factory('Client', ['$resource', 
-	function($resource){
-		return $resource('links/clients.json', null, {
-			query : {method:'GET', isArray:true}
-		});
-}]);
+		////////////////
+		function _getClients() { 
+			return $resource('links/clients.json', null, {
+				query : {method:'GET', isArray:true}
+			});
+		}
 
-myLinksServices.factory('Environment', ['$resource', function($resource) {
-	return $resource('links/:envId.json', {}, {
-		query : {
-			methods: 'GET', 
-			params: {envId: 'env'}, 
-			isArray: true}
-	});
-}]);
+		function _getEnvironment(){
+			return $resource('links/:envId.json', {}, {
+				query : {
+						methods: 'GET', 
+						params: {envId: 'env'}, 
+						isArray: true
+				}
+			});
+		}
+	}
+})();
