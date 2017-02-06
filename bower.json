@@ -1,7 +1,7 @@
 {
   "name": "my-links",
   "description": "A single page application to manage links",
-  "version": "0.0.0",
+  "version": "4.1",
   "homepage": "https://github.com/hlaunay/my-links",
   "license": "none",
   "private": true,
